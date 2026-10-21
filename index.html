@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAM – Stickman Animation Maker | Free stick figure animation for Windows</title>
+<meta name="description" content="SAM is free, open-source stick figure animation software for Windows. Draw and rig stickmen, pose them frame by frame, import Pivot and Stick Nodes figures, and export MP4 video.">
+<link rel="canonical" href="https://samstickmananimationmaker.github.io/">
+<link rel="icon" type="image/png" href="sam-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SAM – Stickman Animation Maker">
+<meta property="og:description" content="Free stick figure animation software for Windows. Draw, rig, animate, export.">
+<meta property="og:url" content="https://samstickmananimationmaker.github.io/">
+<meta property="og:image" content="https://samstickmananimationmaker.github.io/sam-icon.png">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SAM - Stickman Animation Maker",
+  "description": "Free, open-source frame-by-frame stick figure animation software for Windows.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "downloadUrl": "https://github.com/MvRicciutelli/SAM-Stickman-Animation-Maker/releases/latest",
+  "image": "https://samstickmananimationmaker.github.io/sam-icon.png",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --card: #ffffff;
+    --ink: #1a1614;
+    --muted: #6b625c;
+    --line: #e7e0d8;
+    --accent: #c4161c;
+    --accent-ink: #ffffff;
+    --glow: #36d6e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141110;
+      --card: #1e1a18;
+      --ink: #f3ede7;
+      --muted: #a89e96;
+      --line: #332c28;
+      --accent: #e0262c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+    padding: 64px 0 56px;
+  }
+  .hero img { width: 100%; max-width: 380px; height: auto; justify-self: center; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 16px; letter-spacing: -0.02em; }
+  h1 span { color: var(--accent); }
+  .lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 28px; max-width: 34ch; }
+
+  .download {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 16px 28px;
+    border-radius: 12px;
+    box-shadow: 0 0 0 0 var(--glow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .download:hover, .download:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 24px -6px var(--glow); }
+  .download:focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; }
+  .download svg { width: 22px; height: 22px; flex: none; }
+  .meta { margin: 12px 0 0; font-size: .9rem; color: var(--muted); }
+
+  h2 { font-size: 1.6rem; margin: 0 0 20px; letter-spacing: -0.01em; }
+  section { padding: 40px 0; border-top: 1px solid var(--line); }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feature { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .feature h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .feature p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  ol.steps { margin: 0; padding-left: 1.3em; max-width: 68ch; }
+  ol.steps li { margin-bottom: 8px; }
+  ol.steps li::marker { color: var(--accent); font-weight: 700; }
+
+  footer { padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+  footer a { color: var(--ink); }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; padding-top: 32px; gap: 24px; }
+    .hero img { max-width: 220px; grid-row: 1; }
+    .features { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 761px) and (max-width: 960px) {
+    .features { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <h1>SAM <span>Stickman</span> Animation Maker</h1>
+      <p class="lead">Free stick figure animation for Windows. Draw and rig a figure, pose it frame by frame, then export a video.</p>
+      <!-- ponytail: href is the always-correct fallback; the script below swaps in the direct .exe of the latest release -->
+      <a id="download" class="download" href="https://github.com/MvRicciutelli/SAM-Stickman-Animation-Maker/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>
+        Download for Windows
+      </a>
+      <p class="meta" id="download-meta">Free and open source · Windows 10 and 11 (64-bit)</p>
+    </div>
+    <img src="sam-icon.png" width="1000" height="1000" alt="SAM logo: a puppeteer's hands working a stick figure on strings">
+  </header>
+
+  <section aria-labelledby="features">
+    <h2 id="features">What you can do</h2>
+    <div class="features">
+      <div class="feature"><h3>Draw</h3><p>Ten kinds of stick: lines, circles, tapers, polygons, images, text and freehand paint. Fill them with gradients, patterns or textures.</p></div>
+      <div class="feature"><h3>Rig</h3><p>Every figure is a tree of sticks, so moving one carries its children along. Inverse kinematics included.</p></div>
+      <div class="feature"><h3>Animate</h3><p>Pose frame by frame with onion skins, and let SAM generate the inbetween frames for you.</p></div>
+      <div class="feature"><h3>Brushes and patterns</h3><p>Use Photoshop <code>.abr</code> brushes and <code>.pat</code> patterns, import Krita brushes, or make your own.</p></div>
+      <div class="feature"><h3>Bring your figures</h3><p>Import and export Pivot Animator <code>.stk</code> and Stick Nodes <code>.nodes</code> figures. Keep favourites in libraries.</p></div>
+      <div class="feature"><h3>Export</h3><p>MP4, AVI or a PNG sequence out of the box. Add your own FFmpeg for animated GIF and WMV.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="install">
+    <h2 id="install">How to install</h2>
+    <ol class="steps">
+      <li>Click <strong>Download for Windows</strong> and open the installer. You don't need administrator rights.</li>
+      <li>If Windows shows <strong>"Windows protected your PC"</strong>, click <strong>More info</strong> → <strong>Run anyway</strong>. Windows shows this for any app without a paid code-signing certificate.</li>
+      <li>Follow the installer, then start SAM from the Start menu. It tells you when a new version is out.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://github.com/MvRicciutelli/SAM-Stickman-Animation-Maker">Source code on GitHub</a> ·
+    <a href="https://github.com/MvRicciutelli/SAM-Stickman-Animation-Maker/releases">All versions and release notes</a> ·
+    <a href="https://github.com/MvRicciutelli/SAM-Stickman-Animation-Maker/issues">Report a bug</a>
+  </div>
+</footer>
+
+<script>
+  fetch('https://api.github.com/repos/MvRicciutelli/SAM-Stickman-Animation-Maker/releases/latest')
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(rel => {
+      const exe = rel.assets.find(a => /\.exe$/i.test(a.name));
+      if (!exe) return;
+      document.getElementById('download').href = exe.browser_download_url;
+      document.getElementById('download-meta').textContent =
+        `Version ${rel.tag_name.replace(/^v/, '')} · ${Math.round(exe.size / 1048576)} MB · Free and open source · Windows 10 and 11 (64-bit)`;
+    })
+    .catch(() => {}); // the releases page link still works
+</script>
+</body>
+</html>
